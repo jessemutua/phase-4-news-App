@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ArticleCard from './ArticlesCard';
+import '../styles/article-list.css'
 
 function ArticleList() {
     const [articles, setArticles] = useState([]);

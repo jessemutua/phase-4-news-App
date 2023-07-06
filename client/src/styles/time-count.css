@@ -1,0 +1,25 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: rgb(255, 254, 254);
+    padding: 20px;
+    width: 200px;
+}
+
+.time-spent {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.article-list {
+    list-style-type: disc;
+    margin-left: 10px;
+    padding-left: 15px;
+}
+
+.article-item {
+    margin-bottom: 5px;
+    cursor: pointer;
+}

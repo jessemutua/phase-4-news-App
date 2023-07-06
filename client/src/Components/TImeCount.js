@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import "../styles/time-count.css"
 
 function CountdownSidebar() {
     const [timeSpent, setTimeSpent] = useState(0);
@@ -24,10 +25,13 @@ function CountdownSidebar() {
     }, []);
 
     return ( <
+        div className = 'sidebar-container' >
+        <
         div className = "sidebar" >
         <
         div className = "time-spent" > Time Spent on App: { timeSpent }
         seconds < /div> <
+        h3 > Here are some top headlines: < /h3> <
         ul className = "article-list" > {
             articleTitles.map((title, index) => ( <
                 li key = { index }
@@ -36,6 +40,7 @@ function CountdownSidebar() {
             ))
         } <
         /ul> <
+        /div> <
         /div>
     );
 }
