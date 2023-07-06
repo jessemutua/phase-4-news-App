@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ArticleCard from './ArticleCard';
+import ArticleCard from './ArticlesCard';
 
 function ArticleList() {
     const [articles, setArticles] = useState([]);
@@ -10,7 +10,7 @@ function ArticleList() {
 
     async function fetchArticles() {
         try {
-            const response = await fetch('/api/articles');
+            const response = await fetch('/articles');
             const data = await response.json();
             setArticles(data);
         } catch (error) {

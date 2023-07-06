@@ -1,23 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Signup from './Components/Signup';
 import Login from './Components/Login';
 import ArticleList from './Components/ArticleList';
+import Timecount from './Components/TImeCount';
+
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
     return ( <
-        div >
+        div className = "app-container" >
         <
         Router >
         <
-        div >
+        div className = "content" >
+        <
+        Timecount / >
         <
         Switch >
         <
-        Route path = "/mjhg"
+        Route path = "/signup"
         component = { Signup }
         /> <
-        Route path = "/jhgf"
+        Route path = "/login"
         component = { Login }
         /> <
         Route path = "/"
