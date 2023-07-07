@@ -1,50 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 function CreateNewPost() {
     const [title, setTitle] = useState('');
     const [url, setUrl] = useState('');
     const [description, setDescription] = useState('');
-    const [authorName, setAuthorName] = useState('');
     const [published, setPublished] = useState('');
     const [image, setImage] = useState('');
-    const [authors, setAuthors] = useState([]);
-
-    useEffect(() => {
-        fetchAuthors();
-    }, []);
-
-    async function fetchAuthors() {
-        try {
-            const response = await fetch('/authors');
-            const data = await response.json();
-            setAuthors(data);
-        } catch (error) {
-            console.error('Error fetching authors:', error);
-        }
-    };
 
     function handleSubmit(e) {
         e.preventDefault();
 
-        // Find the author with the matching name
-        const selectedAuthor = authors.find((author) => author.name === authorName);
+        const randomAuthorId = Math.floor(Math.random() * 1000) + 1; // Generate a random number between 1 and 1000
 
-        // If author is found, create the article with the author's ID
-        if (selectedAuthor) {
-            const article = {
-                title,
-                url,
-                description,
-                authorId: selectedAuthor.id,
-                published,
-                image,
-            };
+        const article = {
+            title,
+            url,
+            description,
+            authorId: randomAuthorId,
+            published,
+            image,
+        };
 
-            createArticle(article);
-        } else {
-            console.error('Author not found');
-        }
-    };
+        createArticle(article);
+    }
 
     async function createArticle(article) {
         try {
@@ -58,11 +36,10 @@ function CreateNewPost() {
 
             if (response.ok) {
                 console.log('Article created successfully');
-                // Reset form fields
+                // Reset the form fields after creating the article
                 setTitle('');
                 setUrl('');
                 setDescription('');
-                setAuthorName('');
                 setPublished('');
                 setImage('');
             } else {
@@ -71,7 +48,7 @@ function CreateNewPost() {
         } catch (error) {
             console.error('Error creating article:', error);
         }
-    };
+    }
 
     return ( <
         div >
@@ -102,17 +79,7 @@ function CreateNewPost() {
         label > Description: < /label> <
         textarea value = { description }
         onChange = {
-            (e) => setDescription(e.target.value) } >
-        < /textarea> <
-        /div> <
-        div >
-        <
-        label > Author Name: < /label> <
-        input type = "text"
-        value = { authorName }
-        onChange = {
-            (e) => setAuthorName(e.target.value) }
-        /> <
+            (e) => setDescription(e.target.value) } > < /textarea> <
         /div> <
         div >
         <
@@ -136,6 +103,6 @@ function CreateNewPost() {
         /form> <
         /div>
     );
-};
+}
 
-export default CreateNewPost
+export default CreateNewPost;

@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
     def create
         article=Article.create(article_params)
         if article.save
-            render json: article, include: :author, status: :created
+            render json: article, status: :created
         else
             render json: {error: "Failed to create article"}, status: :unprocessable_entity
         end
