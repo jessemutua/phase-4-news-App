@@ -2,6 +2,7 @@ import Signup from './Components/Signup';
 import Login from './Components/Login';
 import ArticleList from './Components/ArticleList';
 import Timecount from './Components/TImeCount';
+import CreateNewPost from './Components/CreateNewPost';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -11,10 +12,7 @@ function App() {
         <
         Router >
         <
-        div className = "content" >
-        <
-        Timecount / >
-        <
+        div className = "content" > { /* <Timecount/> */ } <
         Switch >
         <
         Route path = "/signup"
@@ -23,8 +21,11 @@ function App() {
         Route path = "/login"
         component = { Login }
         /> <
-        Route path = "/"
+        Route path = "/n"
         component = { ArticleList }
+        /> <
+        Route path = '/'
+        component = { CreateNewPost }
         /> <
         /Switch> <
         /div> <
