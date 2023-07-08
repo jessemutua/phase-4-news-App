@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import "../styles/time-count.css"
 
-function CountdownSidebar() {
+
+function TimeCount() {
     const [timeSpent, setTimeSpent] = useState(0);
     const [articleTitles, setArticleTitles] = useState([]);
 
@@ -45,4 +46,4 @@ function CountdownSidebar() {
     );
 }
 
-export default CountdownSidebar;
+export default TimeCount;

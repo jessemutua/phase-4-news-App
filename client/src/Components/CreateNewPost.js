@@ -10,13 +10,13 @@ function CreateNewPost() {
     function handleSubmit(e) {
         e.preventDefault();
 
-        const randomAuthorId = Math.floor(Math.random() * 1000) + 1; // Generate a random number between 1 and 1000
+        const randomAuthorId = Math.floor(Math.random() * 21) + 1; // Generate a random number between 1 and 1000
 
         const article = {
             title,
             url,
             description,
-            authorId: randomAuthorId,
+            author_id: randomAuthorId,
             published,
             image,
         };

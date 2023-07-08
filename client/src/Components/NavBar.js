@@ -1,31 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../styles/navbar.css';
 
 function NavBar() {
     return ( <
-        nav >
+        nav className = "navbar" >
         <
-        ul >
+        ul className = "navbar-list" >
         <
-        li >
+        li className = "navbar-item" >
         <
-        Link to = "/" > Home < /Link> <
+        Link to = "/"
+        className = "navbar-link" > Home < /Link> <
         /li> <
-        li >
+        li className = "navbar-item" >
         <
-        Link to = "/signup" > Sign Up < /Link> <
+        Link to = "/signup"
+        className = "navbar-link" > Sign Up < /Link> <
         /li> <
-        li >
+        li className = "navbar-item" >
         <
-        Link to = "/login" > Login < /Link> <
+        Link to = "/login"
+        className = "navbar-link" > Login < /Link> <
         /li> <
-        li >
+        li className = "navbar-item" >
         <
-        Link to = "/new-post" > Create New Post < /Link> <
+        Link to = "/newpost"
+        className = "navbar-link" > Create New Post < /Link> <
         /li> <
-        li >
+        li className = "navbar-item" >
         <
-        Link to = "/logout" > Logout < /Link> <
+        Link to = "/logout"
+        className = "navbar-link" > Logout < /Link> <
         /li> <
         /ul> <
         /nav>

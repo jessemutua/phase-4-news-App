@@ -22,10 +22,9 @@ function Login() {
                 alert('Failed to log in');
             }
         } catch (error) {
-            console.error('Error:', error);
+            alert('Error:', error);
         }
     }
-
 
     return ( <
         div >
