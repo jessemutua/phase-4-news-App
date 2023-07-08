@@ -19,7 +19,7 @@ function App() {
         NavBar / > { /* <Timecount/> */ } <
         Switch >
         <
-        Route path = "/signup"
+        Route path = "/"
         component = { Signup }
         /> <
         Route path = "/login"
@@ -28,7 +28,7 @@ function App() {
         Route path = '/newpost'
         component = { CreateNewPost }
         /> <
-        Route path = "/"
+        Route path = "/h"
         component = { Home }
         />
 

@@ -1,60 +1,56 @@
 import React, { useState } from 'react';
+import '../styles/login.css';
 
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    async function handleLogin(e) {
+    function handleUsernameChange(e) {
+        setUsername(e.target.value);
+    }
+
+    function handlePasswordChange(e) {
+        setPassword(e.target.value);
+    }
+
+    async function handleSubmit(e) {
         e.preventDefault();
         try {
-            const response = await fetch('/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ username, password }),
-            });
-
-            if (response.ok) {
-                setIsLoggedIn(true);
-            } else {
-                alert('Failed to log in');
-            }
+            // ... handle login logic ...
         } catch (error) {
-            alert('Error:', error);
+            console.error('Error:', error);
         }
     }
 
     return ( <
-        div >
+        div className = "login-container" >
         <
         h2 > Login < /h2> <
-        form onSubmit = { handleLogin } >
+        form onSubmit = { handleSubmit }
+        className = "login-form" >
         <
-        div >
+        div className = "form-group" >
         <
-        label > Username < /label> <
+        label htmlFor = "username" > Username: < /label> <
         input type = "text"
+        id = "username"
         value = { username }
-        onChange = {
-            (e) => setUsername(e.target.value) }
+        onChange = { handleUsernameChange }
         /> <
         /div> <
-        div >
+        div className = "form-group" >
         <
-        label > Password < /label> <
+        label htmlFor = "password" > Password: < /label> <
         input type = "password"
+        id = "password"
         value = { password }
-        onChange = {
-            (e) => setPassword(e.target.value) }
+        onChange = { handlePasswordChange }
         /> <
         /div> <
         button type = "submit" > Login < /button> <
-        /form> {
-            isLoggedIn && < p > You are logged in ! < /p>} <
-                /div>
-        );
-    }
+        /form> <
+        /div>
+    );
+}
 
-    export default Login;
+export default Login;
