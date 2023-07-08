@@ -1,0 +1,38 @@
+.create-new-post {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.create-new-post form {
+    width: 1000px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.create-new-post h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.create-new-post .form-field {
+    margin-bottom: 20px;
+}
+
+.create-new-post input,
+.create-new-post textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.create-new-post button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

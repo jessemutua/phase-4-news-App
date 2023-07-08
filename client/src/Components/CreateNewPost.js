@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/newpost.css'
 
 function CreateNewPost() {
     const [title, setTitle] = useState('');
@@ -51,12 +52,13 @@ function CreateNewPost() {
     }
 
     return ( <
-        div >
+        div className = "create-new-post" >
+
         <
-        h2 > Create Article < /h2> <
         form onSubmit = { handleSubmit } >
         <
-        div >
+        h2 > Create Article < /h2> <
+        div className = "form-field" >
         <
         label > Title: < /label> <
         input type = "text"
@@ -65,7 +67,7 @@ function CreateNewPost() {
             (e) => setTitle(e.target.value) }
         /> <
         /div> <
-        div >
+        div className = "form-field" >
         <
         label > URL: < /label> <
         input type = "text"
@@ -74,14 +76,14 @@ function CreateNewPost() {
             (e) => setUrl(e.target.value) }
         /> <
         /div> <
-        div >
+        div className = "form-field" >
         <
         label > Description: < /label> <
         textarea value = { description }
         onChange = {
             (e) => setDescription(e.target.value) } > < /textarea> <
         /div> <
-        div >
+        div className = "form-field" >
         <
         label > Published: < /label> <
         input type = "text"
@@ -90,7 +92,7 @@ function CreateNewPost() {
             (e) => setPublished(e.target.value) }
         /> <
         /div> <
-        div >
+        div className = "form-field" >
         <
         label > Image: < /label> <
         input type = "text"
