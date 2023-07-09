@@ -6,6 +6,10 @@ function NavBar() {
     return ( <
         nav className = "navbar" >
         <
+        div className = "navbar-welcome" >
+        <
+        span > Plug! < /span> <
+        /div> <
         ul className = "navbar-list" >
         <
         li className = "navbar-item" >
@@ -33,7 +37,9 @@ function NavBar() {
         Link to = "/logout"
         className = "navbar-link" > Logout < /Link> <
         /li> <
-        /ul> <
+        /ul>
+
+        <
         /nav>
     );
 }

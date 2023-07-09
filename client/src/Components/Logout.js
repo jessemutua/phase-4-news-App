@@ -21,7 +21,7 @@ function Logout() {
 
             if (response.ok) {
 
-                history.push('/login');
+                history.replace('/login');
                 alert("Logged out")
             } else {
 

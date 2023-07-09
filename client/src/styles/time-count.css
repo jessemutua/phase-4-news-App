@@ -4,8 +4,9 @@
     left: 0;
     height: 100vh;
     background-color: rgb(255, 254, 254);
-    padding: 20px;
+    padding-top: 20px;
     width: 200px;
+    margin-top: 39px;
 }
 
 .time-spent {
