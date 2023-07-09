@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/article-card.css'
 
-function ArticleCard({ article }) {
+function ArticleCard({ article, onDelete }) {
     const [additionalData, setAdditionalData] = useState(null);
 
     function fetchAdditionalData() {
@@ -16,6 +16,19 @@ function ArticleCard({ article }) {
             });
     };
 
+    function handleDelete() {
+        fetch(`/articles/${article.id}`, {
+                method: 'DELETE',
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                // Call the onDelete callback to inform the parent component about the deletion
+                onDelete(article.id);
+            })
+            .catch((error) => {
+                console.error('Error deleting article:', error);
+            });
+    }
     return ( <
         div className = "article-card" >
         <
@@ -34,9 +47,11 @@ function ArticleCard({ article }) {
                 /a> <
                 /div>
             ) : ( <
-                button onClick = { fetchAdditionalData } > Show more < /button>
+                button onClick = { fetchAdditionalData } > Show more < /button>        
             )
         } <
+        button className = 'delete'
+        onClick = { handleDelete } > Delete < /button> <
         /div>
     );
 }

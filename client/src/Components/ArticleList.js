@@ -19,11 +19,17 @@ function ArticleList() {
         }
     }
 
+    function handleDeleteArticle(articleId) {
+        const updatedArticles = articles.filter((article) => article.id !== articleId);
+        setArticles(updatedArticles);
+    }
+
     return ( <
         div className = "article-list" > {
             articles.map((article) => ( <
                 ArticleCard key = { article.id }
                 article = { article }
+                onDelete = { handleDeleteArticle }
                 />
             ))
         } <

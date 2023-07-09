@@ -25,3 +25,10 @@
 .article-card button {
     width: 200px;
 }
+
+.delete {
+    margin-left: auto;
+    background-color: red;
+    border-radius: 20px;
+    margin-top: -30px;
+}

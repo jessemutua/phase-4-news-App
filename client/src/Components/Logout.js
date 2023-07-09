@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import Login from './Login';
 
 function Logout() {
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
     const history = useHistory();
 
     useEffect(() => {
@@ -18,19 +20,18 @@ function Logout() {
 
                 },
             });
+            setIsLoggedIn(false);
+            alert("Logged out")
 
-            if (response.ok) {
-
-                history.replace('/login');
-                alert("Logged out")
-            } else {
-
-                alert('Failed to logout');
-            }
         } catch (error) {
 
             console.error('Error logging out:', error);
         }
+        if (!isLoggedIn) {
+            return <Login / >
+
+        }
+
     }
 
     return ( <

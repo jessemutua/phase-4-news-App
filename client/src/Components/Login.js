@@ -30,15 +30,15 @@ function Login() {
 
             if (response.ok) {
 
-                alert('Login successful');
+                console.log('Login successful');
             } else {
 
-                alert('Login failed');
+                console.log('Login failed');
             }
         } catch (error) {
             console.error('Error:', error);
         }
-        history.push('/home');
+        history.push('/');
     }
 
     return ( <
