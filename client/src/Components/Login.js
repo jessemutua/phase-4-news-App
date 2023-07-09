@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+
+
 import '../styles/login.css';
 
 function Login() {
+    const history = useHistory();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
@@ -16,10 +20,25 @@ function Login() {
     async function handleSubmit(e) {
         e.preventDefault();
         try {
-            // ... handle login logic ...
+            const response = await fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password }),
+            });
+
+            if (response.ok) {
+
+                alert('Login successful');
+            } else {
+
+                alert('Login failed');
+            }
         } catch (error) {
             console.error('Error:', error);
         }
+        history.push('/home');
     }
 
     return ( <
@@ -48,7 +67,9 @@ function Login() {
         /> <
         /div> <
         button type = "submit" > Login < /button> <
-        /form> <
+        /form>
+
+        <
         /div>
     );
 }

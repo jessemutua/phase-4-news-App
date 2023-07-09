@@ -5,6 +5,7 @@ import Login from './Components/Login';
 import CreateNewPost from './Components/CreateNewPost';
 import NavBar from './Components/NavBar';
 import Home from './Components/Home';
+import Logout from './Components/Logout';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -18,12 +19,16 @@ function App() {
         <
         NavBar / > { /* <Timecount/> */ } <
         Switch >
+
         <
         Route path = "/signup"
         component = { Signup }
         /> <
         Route path = "/login"
         component = { Login }
+        /> <
+        Route path = "/logout"
+        component = { Logout }
         /> <
         Route path = '/newpost'
         component = { CreateNewPost }

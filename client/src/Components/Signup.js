@@ -1,14 +1,36 @@
 import React, { useState } from 'react';
 import '../styles/signup.css'
+import { Link } from 'react-router-dom';
 
 function Signup() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleSubmit = (e) => {
+    async function handleSubmit(e) {
         e.preventDefault();
-        // Perform signup logic here
-    };
+        try {
+            const response = await fetch('/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password }),
+            });
+
+            if (response.ok) {
+                // Perform any necessary signup success actions
+                console.log('Signup successful');
+                // Reset form fields
+                setUsername('');
+                setPassword('');
+            } else {
+                // Handle signup failure case
+                console.error('Signup failed');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
 
     return ( <
         div className = "signup-container" >
@@ -42,7 +64,11 @@ function Signup() {
         <
         /div> <
         button type = "submit" > Sign Up < /button> <
-        /form> <
+        p > Already have an account ? < Link to = "/login" > Login < /Link></p >
+        <
+        /form> { /* Login link */ }
+
+        <
         /div>
     );
 }
