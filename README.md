@@ -9,43 +9,44 @@ Things you may want to cover:
 
 ### System dependencies
 
-# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+- Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 
 gem "rails", "~> 7.0.6"
 
-# Use postgresql as the database for Active Record
+- Use postgresql as the database for Active Record
 
 gem "pg", "~> 1.1"
 
-# Use the Puma web server [https://github.com/puma/puma]
+- Use the Puma web server [https://github.com/puma/puma]
 
 gem "puma", "~> 5.0"
 
-# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
+- Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 
-# gem "kredis"
+- gem "kredis"
 
-# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
+- Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 
 gem "bcrypt", "~> 3.1.7"
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+- Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
-# Reduces boot times through caching; required in config/boot.rb
+- Reduces boot times through caching; required in config/boot.rb
 
-gem "bootsnap", require: false
+- gem "bootsnap", require: false
 
-gem 'json'
+- gem 'json'
 
-gem "active_model_serializers", "~> 0.10.13"
+- gem "active_model_serializers", "~> 0.10.13"
 
-- Configuration
+* Configuration
 
 1. Use bundle install to configure the program and install the required dependencies
-2. Start the rails server
-3. Start the development server
+
+2. Start the rails server (rails s)
+3. Start the development server (npm start --prefix client)
 
 - Database creation
   rails db:create to create a database
@@ -77,3 +78,7 @@ gem "active_model_serializers", "~> 0.10.13"
 7. Click on new article to create a new article
 
 8. To logout, click logout and refresh the page
+
+## Copyright and Licensing
+
+This code belongs to Jesse Mutua. Contributions and use of this code is allowed for learning purposes.
