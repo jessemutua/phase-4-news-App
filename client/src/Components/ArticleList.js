@@ -25,8 +25,12 @@ function ArticleList() {
     }
 
     return ( <
-        div className = "article-list" > {
-            articles.map((article) => ( <
+        div className = "article-list" >
+        <
+        h2 className = 'article-header' > Here are some top exiciting stories of the week < /h2> {
+            articles.map((article) => (
+
+                <
                 ArticleCard key = { article.id }
                 article = { article }
                 onDelete = { handleDeleteArticle }

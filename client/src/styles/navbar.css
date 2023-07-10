@@ -13,6 +13,9 @@
     align-items: center;
     background-color: #f1f1f1;
     padding: 10px;
+    position: fixed;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .navbar-list {
@@ -35,6 +38,3 @@
 .navbar-welcome {
     margin-right: auto;
 }
-
-
-/* Add any additional styling as needed */
