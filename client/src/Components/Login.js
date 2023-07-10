@@ -30,10 +30,10 @@ function Login() {
 
             if (response.ok) {
 
-                console.log('Login successful');
+                alert('Login successful');
             } else {
 
-                console.log('Login failed');
+                alert('Login failed');
             }
         } catch (error) {
             console.error('Error:', error);
@@ -43,11 +43,12 @@ function Login() {
 
     return ( <
         div className = "login-container" >
+
         <
-        h2 > Login < /h2> <
         form onSubmit = { handleSubmit }
         className = "login-form" >
         <
+        h2 > Login < /h2> <
         div className = "form-group" >
         <
         label htmlFor = "username" > Username: < /label> <

@@ -16,6 +16,13 @@ function NavBar({ user }) {
             <
             Link to = "/"
             className = "navbar-link" > Home < /Link> <
+            /li>
+
+            <
+            li className = "navbar-item" >
+            <
+            Link to = "/newpost"
+            className = "navbar-link" > Create New Post < /Link> <
             /li> <
             li className = "navbar-item" >
             <
@@ -29,13 +36,13 @@ function NavBar({ user }) {
             /li> <
             li className = "navbar-item" >
             <
-            Link to = "/newpost"
-            className = "navbar-link" > Create New Post < /Link> <
+            Link to = "/logout"
+            className = "navbar-link" > Logout < /Link> <
             /li> <
             li className = "navbar-item" >
             <
-            Link to = "/logout"
-            className = "navbar-link" > Logout < /Link> <
+            Link to = "/about"
+            className = "navbar-link" > About < /Link> <
             /li> <
             /ul>
 

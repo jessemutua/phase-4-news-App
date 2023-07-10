@@ -7,7 +7,7 @@ import CreateNewPost from './Components/CreateNewPost';
 import NavBar from './Components/NavBar';
 import Home from './Components/Home';
 import Logout from './Components/Logout';
-import './App.css'
+import AboutUs from './Components/AboutUs';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -52,6 +52,9 @@ function App() {
                     /> <
                     Route path = "/newpost"
                     component = { CreateNewPost }
+                    /> <
+                    Route path = "/about"
+                    component = { AboutUs }
                     /> <
                     Route path = "/logout" > { user ? < Logout onLogout = {
                             () => setUser(null) } /> : <Login onLogin={setUser} / > } <
