@@ -30,7 +30,7 @@ function Login() {
 
             if (response.ok) {
 
-                alert('Login successful');
+                alert('Login successful, Refresh page to load the home page');
             } else {
 
                 alert('Login failed');

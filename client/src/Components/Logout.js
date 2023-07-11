@@ -21,7 +21,7 @@ function Logout() {
                 },
             });
             setIsLoggedIn(false);
-            alert("Logged out")
+            alert("Logged out, Refresh to open login page")
 
         } catch (error) {
 
